@@ -1,0 +1,79 @@
+/* ============================================================
+   Legal pages — same Integrate Health tokens as the landing page
+   ============================================================ */
+:root{
+  --paper:#FFFFFF; --cloud:#F8F8F4; --bone:#F4F4F0; --bone-2:#EAEAE3;
+  --ink:#101010; --ink-soft:#444444; --ink-faint:#6E6E6A;
+  --on-dark:#EDEDE8; --on-dark-soft:#A8A8A2; --mist:#E6E6DF;
+  --accent:#DDF280; --accent-2:#CDE85C; --accent-wash:#F7FBE8;
+  --alert:#FF453A;
+  --font-display:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;
+  --font-sans:'Hanken Grotesk',ui-sans-serif,system-ui,sans-serif;
+  --gutter:24px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bone);color:var(--ink);
+  font-family:var(--font-sans);font-size:17.5px;line-height:1.7}
+a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+
+/* Header */
+.l-bar{background:var(--paper);border-bottom:1px solid var(--mist);
+  padding:14px var(--gutter)}
+.l-bar-in{max-width:820px;margin:0 auto;display:flex;align-items:center;
+  justify-content:space-between;gap:20px}
+.l-mark{font-family:var(--font-display);font-weight:700;font-size:19px;
+  letter-spacing:-.02em;text-decoration:none}
+.l-mark span{color:var(--ink-faint);font-weight:500}
+.l-back{font-size:14.5px;color:var(--ink-faint);text-decoration:none}
+.l-back:hover{color:var(--ink);text-decoration:underline}
+
+/* Body */
+.l-wrap{max-width:820px;margin:0 auto;padding:56px var(--gutter) 80px}
+.l-eyebrow{display:inline-block;background:var(--accent);color:var(--ink);
+  font-weight:700;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;
+  padding:6px 14px;border-radius:999px;margin-bottom:20px}
+h1{font-family:var(--font-display);font-weight:600;font-size:42px;line-height:1.14;
+  letter-spacing:-.02em;margin:0 0 14px;text-wrap:balance}
+.l-updated{color:var(--ink-faint);font-size:15px;margin:0 0 36px}
+h2{font-family:var(--font-display);font-weight:600;font-size:24px;line-height:1.25;
+  letter-spacing:-.02em;margin:40px 0 12px}
+h3{font-family:var(--font-display);font-weight:600;font-size:19px;margin:28px 0 8px}
+p{margin:0 0 16px;text-wrap:pretty}
+ul,ol{margin:0 0 16px;padding-left:24px}
+li{margin-bottom:9px;text-wrap:pretty}
+strong{font-weight:700}
+
+/* Callouts */
+.l-note{background:var(--paper);border:1px solid var(--mist);
+  border-left:3px solid var(--accent);border-radius:12px;
+  padding:22px 24px;margin:0 0 32px}
+.l-note p:last-child{margin-bottom:0}
+.l-note h3{margin-top:0}
+.l-alert{background:#FFF4F3;border:1px solid #FFD9D6;border-left:3px solid var(--alert);
+  border-radius:12px;padding:22px 24px;margin:0 0 32px}
+.l-alert p:last-child{margin-bottom:0}
+.l-draft{background:var(--ink);color:var(--on-dark);border-radius:12px;
+  padding:20px 24px;margin:0 0 36px;font-size:15.5px;line-height:1.65}
+.l-draft b{color:var(--accent)}
+.l-draft p:last-child{margin-bottom:0}
+.tbd{background:var(--accent-wash);border:1px dashed var(--ink-faint);
+  border-radius:5px;padding:1px 7px;font-size:.92em;font-weight:600;white-space:nowrap}
+
+/* Footer */
+.l-foot{background:var(--ink);color:var(--on-dark-soft);padding:44px var(--gutter);
+  text-align:center;font-size:14.5px}
+.l-foot a{color:var(--on-dark);text-decoration:none}
+.l-foot a:hover{text-decoration:underline}
+.l-foot .tag{color:var(--accent);font-family:var(--font-display);
+  font-weight:600;font-size:17px;margin-bottom:14px;letter-spacing:-.01em}
+.l-foot .links{margin-top:10px;line-height:2}
+
+@media (max-width:640px){
+  body{font-size:16.5px}
+  .l-wrap{padding:36px var(--gutter) 56px}
+  h1{font-size:30px}
+  h2{font-size:21px}
+}
