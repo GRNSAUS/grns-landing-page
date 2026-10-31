@@ -1018,6 +1018,41 @@ p,li{text-wrap:pretty}
 .ih-mark{font-family:'Bricolage Grotesque',var(--font-sans);font-weight:700;font-size:19px;
   letter-spacing:-.02em;text-transform:none;color:var(--paper)}
 .ih-mark span{font-weight:500;color:var(--on-dark-soft)}
+
+/* ============================================================
+   SALES LETTER — read as a letter: a big opener, quiet body lines,
+   the key lines lifted in white and GRNS green, beats separated by
+   space, and the last line landing as the headline
+   ============================================================ */
+.callout--letter{position:relative;overflow:hidden;
+  background:radial-gradient(900px 460px at 50% 0%,rgba(194,220,130,.13),transparent 72%),
+             radial-gradient(760px 400px at 50% 100%,rgba(194,220,130,.09),transparent 72%),var(--ink)}
+.callout--letter .letter{max-width:680px;border-left:2px solid rgba(194,220,130,.38);padding-left:40px}
+.letter p{color:var(--on-dark-soft);margin-bottom:14px}
+.letter p.em{color:var(--paper);font-weight:600}
+.letter p.pop{color:var(--accent);font-weight:700}
+.letter p.beat{margin-top:46px}
+.letter p.lt-open{font-size:42px;font-weight:700;line-height:1.12;letter-spacing:-.035em;
+  color:var(--paper);margin-bottom:42px}
+.letter p.lt-end{font-size:46px;font-weight:800;line-height:1.08;letter-spacing:-.04em;
+  color:var(--accent);margin-top:10px}
+@media (max-width:640px){
+  .callout--letter .letter{padding-left:20px}
+  .letter p{margin-bottom:10px}
+  .letter p.beat{margin-top:34px}
+  .letter p.lt-open{font-size:30px;margin-bottom:30px}
+  .letter p.lt-end{font-size:34px}
+}
+
+/* Booking form: a spinner sits behind the form while it loads, and the
+   form paints over it once ROASForm has drawn the first question */
+.fm-body{position:relative}
+.fm-load{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:14px;font-size:15px;font-weight:600;color:var(--ink-faint);pointer-events:none}
+.fm-spin{width:34px;height:34px;border-radius:50%;border:3px solid var(--mist);
+  border-top-color:var(--ink);animation:fmSpin .8s linear infinite}
+@keyframes fmSpin{to{transform:rotate(360deg)}}
+#roasform-345f3b-4bfb2b-db9538{position:relative;z-index:1}
 </style>
 </head>
 <body>
@@ -1192,33 +1227,33 @@ p,li{text-wrap:pretty}
 </section>
 
 <!-- ============ 11. SALES LETTER ============ -->
-<section class="callout">
+<section class="callout callout--letter">
   <div class="letter">
-    <p>Let&rsquo;s be really real for a&nbsp;second&hellip;</p>
+    <p class="lt-open">Let&rsquo;s be really real for a&nbsp;second&hellip;</p>
     <p>We&rsquo;re not going to pretend these 28 days are going to radically transform your life.</p>
-    <p>That&rsquo;s not the point.</p>
+    <p class="em">That&rsquo;s not the point.</p>
     <p>And if that&rsquo;s what you&rsquo;re hoping for&hellip;</p>
-    <p>This probably isn&rsquo;t for you.</p>
-    <p>Because here&rsquo;s the thing:</p>
-    <p>You can&rsquo;t expect to transform your life</p>
-    <p>if you can&rsquo;t even stay consistent for 28 days.</p>
-    <p>These 28 days are about something much simpler.</p>
-    <p>Installing a&nbsp;few healthy habits.</p>
-    <p>Showing yourself that you can keep a&nbsp;commitment.</p>
-    <p>Proving to yourself that your health matters.</p>
-    <p>There&rsquo;s no point bombarding you with a &ldquo;90-Day Life Reset Protocol&rdquo;</p>
+    <p class="em">This probably isn&rsquo;t for you.</p>
+    <p class="beat">Because here&rsquo;s the thing:</p>
+    <p class="em">You can&rsquo;t expect to transform your life</p>
+    <p class="pop">if you can&rsquo;t even stay consistent for 28 days.</p>
+    <p class="beat">These 28 days are about something much simpler.</p>
+    <p class="em">Installing a&nbsp;few healthy habits.</p>
+    <p class="em">Showing yourself that you can keep a&nbsp;commitment.</p>
+    <p class="em">Proving to yourself that your health matters.</p>
+    <p class="beat">There&rsquo;s no point bombarding you with a &ldquo;90-Day Life Reset Protocol&rdquo;</p>
     <p>When all you need is something you can stick to</p>
-    <p>So we start small.</p>
-    <p>We break your goals down into bite&#8209;sized actions.</p>
+    <p class="pop">So we start small.</p>
+    <p class="beat">We break your goals down into bite&#8209;sized actions.</p>
     <p>Things you can actually do every day.</p>
     <p>Because when something feels doable, you&rsquo;re far more likely to do it.</p>
-    <p>And when you string enough doable days together&hellip;</p>
+    <p class="beat">And when you string enough doable days together&hellip;</p>
     <p>You&rsquo;ll start to notice a&nbsp;shift</p>
-    <p>You become more consistent.</p>
-    <p>More disciplined.</p>
-    <p>More confident in yourself.</p>
-    <p>And eventually, with enough doable days in a&nbsp;row</p>
-    <p>Your life radically transforms.</p>
+    <p class="em">You become more consistent.</p>
+    <p class="em">More disciplined.</p>
+    <p class="em">More confident in yourself.</p>
+    <p class="beat">And eventually, with enough doable days in a&nbsp;row</p>
+    <p class="lt-end">Your life radically transforms.</p>
     <a class="cta" data-open-form href="#offer">Build Your 28 Day Plan</a>
   </div>
 </section>
@@ -1425,6 +1460,7 @@ p,li{text-wrap:pretty}
       <button class="fm-x" type="button" data-close-form aria-label="Close">&times;</button>
     </div>
     <div class="fm-body">
+      <div class="fm-load" aria-hidden="true"><span class="fm-spin"></span>Loading&hellip;</div>
       <div id="roasform-345f3b-4bfb2b-db9538" style="width:100%;height:600px"></div>
     </div>
   </div>
@@ -1436,6 +1472,25 @@ p,li{text-wrap:pretty}
   var modal = document.getElementById('form-modal');
   if (!modal) return;
   var mounted = false, lastFocused = null;
+
+  /* The form is a chain: embed script, then the form page, then its app,
+     then its questions. Two things shorten the wait after a click:
+     - the embed script is fetched once the page has loaded. On its own it
+       only defines the API: nothing renders and nothing is reported.
+     - mounting starts on pointerdown, a beat before the click lands.
+     The form itself is still only mounted for someone pressing a button,
+     because it reports its first question as "seen" the moment it loads. */
+  function loadEmbed(){
+    var w = window, d = document;
+    w.ROASForm = w.ROASForm || {q:[]};
+    if (w.ROASForm._l) return;
+    w.ROASForm._l = 1;
+    var s = d.createElement('script');
+    s.src = 'https://my.roasform.com/roasform-embed.js'; s.async = true; d.head.appendChild(s);
+  }
+  var idle = window.requestIdleCallback || function(f){ return setTimeout(f, 1); };
+  if (document.readyState === 'complete') idle(loadEmbed);
+  else window.addEventListener('load', function(){ idle(loadEmbed); });
 
   function mount(){
     if (mounted) return;
@@ -1469,6 +1524,7 @@ p,li{text-wrap:pretty}
   }
 
   [].forEach.call(document.querySelectorAll('[data-open-form]'), function(a){
+    a.addEventListener('pointerdown', function(e){ if (e.button === 0) mount(); });
     a.addEventListener('click', open);
   });
   [].forEach.call(modal.querySelectorAll('[data-close-form]'), function(el){
