@@ -1,14 +1,14 @@
 /* ============================================================
-   Legal pages — same Integrate Health tokens as the landing page
+   Legal pages — same GRNS tokens as the landing page
    ============================================================ */
 :root{
-  --paper:#FFFFFF; --cloud:#F8F8F4; --bone:#F4F4F0; --bone-2:#EAEAE3;
-  --ink:#101010; --ink-soft:#444444; --ink-faint:#6E6E6A;
-  --on-dark:#EDEDE8; --on-dark-soft:#A8A8A2; --mist:#E6E6DF;
-  --accent:#DDF280; --accent-2:#CDE85C; --accent-wash:#F7FBE8;
+  --paper:#FFFFFF; --cloud:#FAFBF8; --bone:#EEF1E9; --bone-2:#E2E8DD;
+  --ink:#0E2D03; --ink-soft:#47513F; --ink-faint:#607058;
+  --on-dark:#F3F6F0; --on-dark-soft:#B4C2AC; --mist:#DDE3D7;
+  --accent:#C2DC82; --accent-2:#B3D16B; --accent-wash:#EAF0E5;
   --alert:#FF453A;
-  --font-display:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;
-  --font-sans:'Hanken Grotesk',ui-sans-serif,system-ui,sans-serif;
+  --font-display:'Inter Tight',ui-sans-serif,system-ui,sans-serif;
+  --font-sans:'Inter Tight',ui-sans-serif,system-ui,sans-serif;
   --gutter:24px;
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -77,3 +77,13 @@ strong{font-weight:700}
   h1{font-size:30px}
   h2{font-size:21px}
 }
+
+/* GRNS logo in the header */
+.l-mark img{display:block;height:22px;width:auto}
+
+/* Footer credit: "Powered by" plus the IntegrateHealth wordmark in its own font */
+.powered{display:flex;align-items:center;justify-content:center;gap:10px;margin:0 0 14px;
+  font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-soft)}
+.ih-mark{font-family:'Bricolage Grotesque',var(--font-sans);font-weight:700;font-size:19px;
+  letter-spacing:-.02em;text-transform:none;color:var(--paper)}
+.ih-mark span{font-weight:500;color:var(--on-dark-soft)}
